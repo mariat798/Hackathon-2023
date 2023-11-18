@@ -1,0 +1,25 @@
+/* header.component.scss */
+
+@import '../../../styles.scss';
+
+header {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  border-bottom: 1px solid $border;
+  padding: 0.5rem;
+
+  h1, p {
+    margin: 0px;
+  }
+
+  h1 {
+    grid-column: 2 / span 1;
+    text-align: center;
+  }
+
+  p {
+    grid-column: 3 / span 1;
+    text-align: right;
+  }
+}

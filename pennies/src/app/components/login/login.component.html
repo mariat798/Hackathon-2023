@@ -1,0 +1,9 @@
+<!-- login.component.html -->
+
+<form [formGroup]="form">
+  <label for="username">Username: </label>
+  <input id="username" formControlName="username" />
+  <label for="password">Password: </label>
+  <input id="password" formControlName="password" />
+  <button (click)="submit()" [disabled]="!valid()">Login</button>
+</form>
