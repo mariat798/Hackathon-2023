@@ -1,7 +1,7 @@
 /// user-model.ts
 
 export interface UserModel {
-    id: string;
-    userName: string;
+    userId: string;
+    username: string;
     password: string;
 };

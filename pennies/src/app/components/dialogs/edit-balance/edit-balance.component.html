@@ -1,0 +1,16 @@
+<!-- new-balance.component.html -->
+
+<div class="dialog">
+  <form [formGroup]="form">
+    <label for="name">Name: </label>
+    <input type="text" id="name" formControlName="name" />
+    <label for="balance">Balance: </label>
+    <input type="number" id="balance" formControlName="balance" />
+  </form>
+
+  <div class="controls">
+    <button (click)="delete()" class="delete">Delete</button>
+    <button (click)="cancel()">Cancel</button>
+    <button (click)="confirm()" [disabled]="!valid()">Confirm</button>
+  </div>
+</div>

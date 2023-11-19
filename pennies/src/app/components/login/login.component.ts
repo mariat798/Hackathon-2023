@@ -4,7 +4,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from '../../services/user.service';
+import { Router } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { UserModel } from '../../models/user-model';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +22,7 @@ export class LoginComponent {
     password: new FormControl('')
   });
 
-  constructor(private apiService: ApiService) {}
+  constructor(private userService: UserService, private router: Router, private apiService: ApiService) {}
 
   public get Username(): string {
     return this.form.get('username')?.value;
@@ -33,7 +36,9 @@ export class LoginComponent {
     return this.Username.length > 0 && this.Password.length > 0;
   }
 
-  public submit(): void {
-    this.apiService.login(this.Username, this.Password);
+  public async submit(): Promise<void> {
+    if (await this.apiService.tryLogin(this.Username, this.Password)) {
+      this.router.navigate(['/']);
+    }
   }
 }

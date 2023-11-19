@@ -1,1 +1,70 @@
 /* view.component.scss */
+
+@import '../../../styles.scss';
+
+.view {
+  width: max-content;
+  padding: 1rem;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+
+  .balances {
+    max-width: 250px;
+    border: 1px solid $border;
+    padding: 1rem;
+
+    h1 {
+      font-size: 1.25rem;
+      font-weight: 300;
+      font-style: italic;
+      margin: 0px 0px 1rem 0px;
+      text-align: center;
+    }
+
+    .no-balances {
+      text-align: center;
+      font-style: italic;
+    }
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.75rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-style: italic;
+
+      border-top: 1px dashed $border;
+    }
+
+    .balance {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+
+      p {
+        font-size: 0.75rem;
+        font-weight: 300;
+        margin: 0px;
+      }
+    }
+
+    .balance:hover {
+      background-color: $gray;
+      cursor: pointer;
+    }
+
+    button {
+      margin-top: 0.5rem;
+      width: 100%;
+      padding: 0.25rem 1rem;
+    }
+  }
+}

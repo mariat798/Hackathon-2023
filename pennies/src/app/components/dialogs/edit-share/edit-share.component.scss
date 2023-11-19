@@ -1,0 +1,29 @@
+/* new-balance.component.scss */
+
+@import '../../../../styles.scss';
+
+.dialog {
+  padding: 1rem;
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem;
+  }
+
+  .controls {
+    margin-top: 1rem;
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
+
+    button {
+      padding: 0.25rem;
+    }
+
+    .delete {
+      color: $white;
+      background-color: $red;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<!-- new-balance.component.html -->
+
+<div class="dialog">
+  <form [formGroup]="form">
+    <label for="symbol">Symbol: </label>
+    <input type="text" id="symbol" formControlName="symbol" />
+    <label for="quantity">Quantity: </label>
+    <input type="number" id="quantity" formControlName="quantity" />
+  </form>
+
+  <div class="controls">
+    <button (click)="cancel()">Cancel</button>
+    <button (click)="confirm()" [disabled]="!valid()">Confirm</button>
+  </div>
+</div>

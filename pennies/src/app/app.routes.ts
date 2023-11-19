@@ -6,7 +6,7 @@ import { Routes } from '@angular/router';
 // Component imports
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { ViewComponent } from './components/view/login.component';
+import { ViewComponent } from './components/view/view.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },

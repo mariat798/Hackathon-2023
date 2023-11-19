@@ -20,7 +20,7 @@ export class HeaderComponent {
 
   public get UserStatusMessage(): string {
     if (this.userService.IsLoggedIn) {
-      return `Logged in as ${this.userService.user?.userName}`;
+      return `Logged in as ${this.userService.User?.username}`;
     }
 
     return 'Not logged in';

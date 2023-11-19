@@ -20,7 +20,7 @@ export class StorageService {
         return null;
     }
 
-    public setItem<T extends string>(itemName: StorageItem, value: T): void {
+    public setItem<T>(itemName: StorageItem, value: T): void {
         localStorage.setItem(itemName.toString(), JSON.stringify(value));
     }
 

@@ -1,3 +1,39 @@
 <!-- view.component.html -->
 
-<h1>view</h1>
+<div class="view">
+  <div class="balances">
+    <h1>Balances</h1>
+    <div class="balance" *ngFor="let balance of balances" (click)="editBalance(balance)">
+      <p>{{ balance.name }}</p>
+      <p>${{ balance.balance | number: '1.2-2' }}</p>
+    </div>
+    <div class="no-balances" *ngIf="balances.length === 0; else showTotal">
+      No balances to display.
+    </div>
+    <ng-template #showTotal>
+      <div class="total">
+        <p>Total</p>
+        <p>${{ getTotal() | number: '1.2-2' }}</p>
+      </div>
+    </ng-template>
+    <button (click)="newBalance()">New Balance</button>
+  </div>
+
+  <div class="balances">
+    <h1>Shares</h1>
+    <div class="balance" *ngFor="let share of shares" (click)="editShare(share)">
+      <p>{{ share.symbol }}</p>
+      <p>x{{ share.quantity }}</p>
+    </div>
+    <div class="no-balances" *ngIf="shares.length === 0; else showTotal">
+      No shares to display.
+    </div>
+    <ng-template #showTotal>
+      <div class="total">
+        <p>Total</p>
+        <p>${{ getTotal() | number: '1.2-2' }}</p>
+      </div>
+    </ng-template>
+    <button (click)="newShare()">New Share</button>
+  </div>
+</div>
